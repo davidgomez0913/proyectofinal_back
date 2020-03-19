@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   get '/logged_in', to: 'sessions#is_logged_in?'
 
   resources :users, only: [:create, :show, :index]
+  scope '/api/v1' do
+    resources :events
+  end
 end
